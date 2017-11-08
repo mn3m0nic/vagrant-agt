@@ -33,7 +33,7 @@ all:  stop kill start ssh
 
 init-dirs:
 	grep synced_folder Vagrantfile | awk '{print $$2}' | tr -d "," | sort -u | xargs -L1 mkdir -vp
-	echo "echo \"manual steps\"" > shared/init.sh
+	[ ! -f "shared/init.sh" ] && echo "echo \"manual steps\"" > shared/init.sh
 	chmod a+x shared/init.sh
 
 init-pkg:
