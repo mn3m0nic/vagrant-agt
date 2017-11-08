@@ -8,6 +8,7 @@ Available commands:
 	cli    - connect to AWLESS (console with autocompletion for AWS) 
 	c      - configure AWS-CLI 
 	cg     - configure Google CLI 
+	clean  - remove '.aws', '.config' and 'shared' dirs data
 	init   - Init your host system and working dir
 	kill   - destroy VM (.aws/* and shared/* files will be untouched)
 	listg  - get some data from Google Cloud 
@@ -30,18 +31,14 @@ all:  stop kill start ssh
 init:
 	sudo aptitude update
 	sudo aptitude install -y vagrant virtualbox devscripts apt-cacher-ng
-	vagrant box add precise32 http://files.vagrantup.com/precise32.box
+	#vagrant box add precise32 http://files.vagrantup.com/precise32.box
 	mkdir .aws shared .config
 stop:
 	vagrant suspend
 kill:
 	vagrant destroy
-
 clean: 	
-	rm -rfv .aws
-	rm -rfv .config
-	#rm -rfv shared
-
+	rm -rfv .aws .config shared
 restart:
 	vagrant destroy
 	vagrant up
@@ -66,5 +63,3 @@ cli:
 
 status:
 	vagrant status
-
-
