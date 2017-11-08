@@ -40,6 +40,8 @@ kill:
 	vagrant destroy
 clean: 	
 	rm -rfv .aws .config shared
+	rm -fv *.swp *.bak
+	git status
 restart:
 	vagrant destroy
 	vagrant up
