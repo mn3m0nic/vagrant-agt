@@ -42,7 +42,7 @@ To add more shares - edit Vagrandfile file;
 
 ```bash
 E=production; mkdir -p work/$E; cd work/$E
-git clone git@github.com:/mn3m0nic/vagrant-agt.git
+git clone git@github.com:/mn3m0nic/vagrant-agt.git .
 make init
 make
 make all
@@ -78,7 +78,7 @@ You need to store .aws and .config directory to somewhere and copy it back into 
 
 ```bash
 E=test-8; mkdir -p work/$E; cd work/$E
-git clone git@github.com:/mn3m0nic/vagrant-agt.git
+git clone git@github.com:/mn3m0nic/vagrant-agt.git .
 make init
 cp -v SOURCE_CONFIGS/.aws/* .aws/
 cp -v SOURCE_CONFIGS/.config/* .config/
