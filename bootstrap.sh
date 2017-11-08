@@ -6,6 +6,11 @@ init()
   #echo 'Acquire::http { Proxy "http://'${APTCACHEIP}':3142"; };' > /etc/apt/apt.conf.d/02proxy 
   #echo 'nameserver '$DNSRESOLVER > /etc/resolv.conf
   #chattr +i /etc/resolv.conf
+  ### LOCAL CONFIG - SKIP if not exist - PUT in shared/init.sh
+  if [ -f "/mnt/v/init.sh" ]; then
+     chmod a+x /mnt /mnt/v/init.sh
+     bash -c /mnt/v/init.sh
+  fi
   apt-get update
   apt-get install -y python-pip python3-pip unzip vim mc bash-completion git wget groff lsb-release curl
 }
