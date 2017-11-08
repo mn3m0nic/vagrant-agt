@@ -1,0 +1,7 @@
+.ssh/*
+.aws/*
+.aws*/*
+.vagrant/*
+.config/*
+*.swp
+shared/*
