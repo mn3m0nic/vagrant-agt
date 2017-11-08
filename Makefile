@@ -5,10 +5,11 @@ Usage:
 
 Available commands:
 	all    - stop, kill, create, start and ssh = start fresh copy (no configure)
-	cli    - connect to AWLESS (console with autocompletion for AWS) 
 	c      - configure AWS-CLI 
 	cg     - configure Google CLI 
 	clean  - remove '.aws', '.config' and 'shared' dirs data
+	cli    - connect to AWLESS (console with autocompletion for AWS) 
+	help   - show this help
 	init   - Init your host system and working dir
 	kill   - destroy VM (.aws/* and shared/* files will be untouched)
 	listg  - get some data from Google Cloud 
