@@ -13,7 +13,7 @@ Available commands:
 	init   - Init your host system and working dir
 	kill   - destroy VM (.aws/* and shared/* files will be untouched)
 	listg  - get some data from Google Cloud 
-	list   - list of some offten used commands to get date from AWS 
+	list   - list of some often used commands to get date from AWS 
 	ssh    - connect to VM via SSH 
 	start  - start or create(if it's not exist) and start VM 
 	status - get status of current VM;

@@ -12,7 +12,7 @@ This template should create easy to use, quick way to install [Amazon Cloud CLI]
 - Keep all files related with specific environment in one place - git(permanent) and VM(temporary);
 - Safely run "curl bla-bla| sudo bash" installation commands as they are isolated in VM;
 - Use shorten old school make style commands to perform some basic actions;
-- Safely migrate your single Cloud access point via different distos or desktops;
+- Safely migrate your single Cloud access point via different disrtos or desktops;
 
 ![](https://raw.githubusercontent.com/mn3m0nic/vagrant-agt/master/docs/vis.png)
 
@@ -46,6 +46,7 @@ git clone git@github.com:/mn3m0nic/vagrant-agt.git .
 make init
 make
 make all
+make c
 make ssh
 ```
 
@@ -65,7 +66,7 @@ Available commands:
 	init   - Init your host system and working dir
 	kill   - destroy VM (.aws/* and shared/* files will be untouched)
 	listg  - get some data from Google Cloud 
-	list   - list of some offten used commands to get date from AWS 
+	list   - list of some often used commands to get date from AWS 
 	ssh    - connect to VM via SSH 
 	start  - start or create(if it's not exist) and start VM 
 	status - get status of current VM;
@@ -73,7 +74,7 @@ Available commands:
 ```
 
 
-### Existing configs installation
+### Existing configuration installation
 
 You need to store .aws and .config directory to somewhere and copy it back into fresh install:
 
