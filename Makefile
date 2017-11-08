@@ -11,9 +11,11 @@ Available commands:
 	cli    - connect to AWLESS (console with autocompletion for AWS) 
 	help   - show this help
 	init   - Init your host system and working dir
+	init-pkg - Install vagrant, VirtualBox 
+	init-dirs - Create "permanent" dirs to store shared data with VM
 	kill   - destroy VM (.aws/* and shared/* files will be untouched)
 	listg  - get some data from Google Cloud 
-	list   - list of some often used commands to get date from AWS 
+	list   - list of some offten used commands to get date from AWS 
 	ssh    - connect to VM via SSH 
 	start  - start or create(if it's not exist) and start VM 
 	status - get status of current VM;
@@ -29,19 +31,21 @@ help:
 
 all:  stop kill start ssh
 
-init:
+init-dirs:
+	grep synced_folder Vagrantfile | awk '{print $$2}' | tr -d "," | sort -u | xargs -L1 mkdir -vp
+
+init-pkg:
 	sudo aptitude update
 	sudo aptitude install -y vagrant virtualbox devscripts apt-cacher-ng
-	#vagrant box add precise32 http://files.vagrantup.com/precise32.box
-	mkdir .aws shared .config
+
+init: init-dirs init-pkg
+
 stop:
 	vagrant suspend
 kill:
 	vagrant destroy
 clean: 	
-	rm -rfv .aws .config shared
-	rm -fv *.swp *.bak
-	git status
+	@grep synced_folder Vagrantfile | awk '{print $$2}' | tr -d "," | sort -u | xargs -L1 echo rm -rfv
 restart:
 	vagrant destroy
 	vagrant up

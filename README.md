@@ -12,7 +12,7 @@ This template should create easy to use, quick way to install [Amazon Cloud CLI]
 - Keep all files related with specific environment in one place - git(permanent) and VM(temporary);
 - Safely run "curl bla-bla| sudo bash" installation commands as they are isolated in VM;
 - Use shorten old school make style commands to perform some basic actions;
-- Safely migrate your single Cloud access point via different disrtos or desktops;
+- Safely migrate your single Cloud access point via different distos or desktops;
 
 ![](https://raw.githubusercontent.com/mn3m0nic/vagrant-agt/master/docs/vis.png)
 
@@ -46,7 +46,6 @@ git clone git@github.com:/mn3m0nic/vagrant-agt.git .
 make init
 make
 make all
-make c
 make ssh
 ```
 
@@ -57,24 +56,29 @@ Usage:
 	make <COMMAND> [args]
 
 Available commands:
-	all    - stop, kill, create, start and ssh = start fresh copy (no configure)
-	c      - configure AWS-CLI 
-	cg     - configure Google CLI 
-	clean  - remove '.aws', '.config' and 'shared' dirs data
-	cli    - connect to AWLESS (console with autocompletion for AWS) 
-	help   - show this help
-	init   - Init your host system and working dir
-	kill   - destroy VM (.aws/* and shared/* files will be untouched)
-	listg  - get some data from Google Cloud 
-	list   - list of some often used commands to get date from AWS 
-	ssh    - connect to VM via SSH 
-	start  - start or create(if it's not exist) and start VM 
-	status - get status of current VM;
-	stop   - suspend VM
+
+
+Available commands:
+        all    - stop, kill, create, start and ssh = start fresh copy (no configure)
+        c      - configure AWS-CLI 
+        cg     - configure Google CLI 
+        clean  - remove '.aws', '.config' and 'shared' dirs data
+        cli    - connect to AWLESS (console with autocompletion for AWS) 
+        help   - show this help
+        init   - Init your host system and working dir
+        init-pkg - Install vagrant, VirtualBox 
+        init-dirs - Create "permanent" dirs to store shared data with VM
+        kill   - destroy VM (.aws/* and shared/* files will be untouched)
+        listg  - get some data from Google Cloud 
+        list   - list of some offten used commands to get date from AWS 
+        ssh    - connect to VM via SSH 
+        start  - start or create(if it's not exist) and start VM 
+        status - get status of current VM;
+        stop   - suspend VM
 ```
 
 
-### Existing configuration installation
+### Existing configs installation
 
 You need to store .aws and .config directory to somewhere and copy it back into fresh install:
 
@@ -94,7 +98,7 @@ make ssh
 - [X] AWLESS install
 - [X] Terraform install
 - [X] Google-CLI install
-- [ ] Testing installation
-- [ ] Client specific configuration
+- [X] Basic testing of binary files presense after installation
+- [ ] User env's specific configuration
 
 

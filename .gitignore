@@ -5,4 +5,5 @@
 .config/*
 *.swp
 shared/*
-*.bak
+terraform/*
+terraform.d/*

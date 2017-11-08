@@ -65,7 +65,9 @@ testing()
 {
   cd ~
   echo "--- testing ---"
-  #aws ec2 describe-instances
+  echo -n "AWS-CLI   ... "; [ -f `which aws` ] && echo "OK" || echo "FAIL (!!)"
+  echo -n "AWS-shell ... "; [ -f `which aws-shell` ] && echo "OK" || echo "FAIL (!!)"
+  echo -n "Terraform ... "; [ -f `which Terraform` ] && echo "OK" || echo "FAIL (!!)"
   echo "All done."
 }
 main()
