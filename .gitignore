@@ -6,4 +6,6 @@
 *.swp
 shared/*
 terraform/*
+environment/debian-agt/.ssh/*
 terraform.d/*
+
