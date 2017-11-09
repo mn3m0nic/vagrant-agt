@@ -23,7 +23,7 @@ This template should create easy to use, quick way to install [Amazon Cloud CLI]
 
 ```bash
 sudo apt-get update
-sudo apt-get install virtualbox vagrant make:w
+sudo apt-get install virtualbox vagrant make
 ```
 - Virtualization support and enabled in BIOS/UEFI/whatever;
 
