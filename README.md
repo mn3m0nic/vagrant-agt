@@ -18,7 +18,7 @@ This template should create easy to use, quick way to install [Amazon Cloud CLI]
 
 ### Requirements for host system:
 
-- Debian 9 "Stretch" or Devuan 9 "ASCII", can work on Ubuntu (not tested yet);
+- Debian 9 "Stretch" or Devuan 2 "ASCII", can work on Ubuntu (not tested yet);
 - Installed "devscripts" package (make) and Vagrant and VirtualBox;
 - Virtualization support and enabled in BIOS/UEFI/whatever;
 
@@ -99,6 +99,6 @@ make ssh
 - [X] Terraform install
 - [X] Google-CLI install
 - [X] Basic testing of binary files presense after installation
-- [ ] User env's specific configuration
+- [X] User env's specific configuration
 
 
