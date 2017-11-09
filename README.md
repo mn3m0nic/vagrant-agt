@@ -19,7 +19,12 @@ This template should create easy to use, quick way to install [Amazon Cloud CLI]
 ### Requirements for host system:
 
 - Debian 9 "Stretch" or Devuan 2 "ASCII", can work on Ubuntu (not tested yet);
-- Installed "devscripts" package (make) and Vagrant and VirtualBox;
+- Installed "make", "vagrant" and "VirtualBox";
+
+```bash
+sudo apt-get update
+sudo apt-get install virtualbox vagrant make:w
+```
 - Virtualization support and enabled in BIOS/UEFI/whatever;
 
 ### Sharing data with VM
@@ -38,11 +43,11 @@ drwxr-xr-x 3 root    root    4.0K Nov  8 10:45 ..
 Also configs in .aws and .config will be shared;
 To add more shares - edit Vagrandfile file;
 
-### Quick start on Debian/Devuan based system:
+### Quick start on Debian/Devuan/Ubuntu based system:
 
 ```bash
 E=production; mkdir -p work/$E; cd work/$E
-git clone git@github.com:/mn3m0nic/vagrant-agt.git .
+svn export https://github.com/mn3m0nic/vagrant-agt/trunk/environment/debian-agt/ .
 make init
 make
 make all
@@ -84,7 +89,7 @@ You need to store .aws and .config directory to somewhere and copy it back into 
 
 ```bash
 E=test-8; mkdir -p work/$E; cd work/$E
-git clone git@github.com:/mn3m0nic/vagrant-agt.git .
+svn export https://github.com/mn3m0nic/vagrant-agt/trunk/environment/debian-agt/ .
 make init
 cp -v SOURCE_CONFIGS/.aws/* .aws/
 cp -v SOURCE_CONFIGS/.config/* .config/
@@ -100,5 +105,6 @@ make ssh
 - [X] Google-CLI install
 - [X] Basic testing of binary files presense after installation
 - [X] User env's specific configuration
+- [X] Remove not required files from local git copy (images \ Readme \ .git) - used SVN export;
 
 
